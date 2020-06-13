@@ -1,0 +1,71 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.comment_author img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 1px;
+}
+
+/*.spam .approve, .trash .approve, .unapproved .approve {*/
+/*    display: inline;*/
+/*}*/
+
+
+.spam .approve, .trash .approve, .approve {
+    display: inline;
+}
+
+.custom-comment_options {
+    max-width: 1050px;
+    background: white;
+    padding: 15px;
+    margin: 15px 0 15px;
+    position: relative;
+    width: 100%;
+}
+
+.custom-comment_options input, .custom-comment_options textarea {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.form-control-textarea {
+    max-width: 550px;
+    width: 100%;
+    display: inline-flex;
+    position: relative;
+    top: 50%;
+    transform: translateY(-7%);
+    margin-right: 10px;
+    flex-direction: column;
+}
+
+.form-control {
+    display: inline-flex;
+    position: relative;
+    top: 50%;
+    transform: translateY(-18%);
+    margin-right: 10px;
+    flex-direction: column;
+}
+
+.form-control input, .form-control-textarea textarea {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.wp-list-table .quick_edit_submit {
+    margin-top: 20px;
+    margin-left: 35px;
+}
+
+.repeater .dashicons-plus {
+    margin-top: 4px;
+}
+
+.wp-list-table img {
+    margin-right: 5px;
+}
