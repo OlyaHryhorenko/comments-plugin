@@ -16,6 +16,8 @@ jobs:
 
     - name: Install Dependencies (PHP vendors)
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: CS
+      run: composer global require squizlabs/php_codesniffer wp-coding-standards/wpcs
     - name: Wordpress cs
       run: ./vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs
     - name: Code style
