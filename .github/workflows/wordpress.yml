@@ -21,7 +21,7 @@ jobs:
     - name: Wordpress cs
       run: ./vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs
     - name: Code style
-      run: ./vendor/bin/phpcs  / --colors --standard=phpcs.xml
+      run: ./vendor/bin/phpcs  /admin --colors --standard=phpcs.xml
     - name: Test coverage
       run:  ./vendor/phpunit/phpunit/phpunit --configuration tests/phpunit/phpunit.xml
     - name: Execute tests (Unit and Feature tests) via PHPUnit
