@@ -18,7 +18,7 @@
 <div class="form-name">
     <form action="options.php" method="post" name="options">
 
-		<?php settings_fields( $this->plugin_name ); ?>
+        <?php settings_fields( $this->plugin_name ); ?>
         <table class="custom-comment_options">
             <tr>
                 <td></td>
@@ -45,7 +45,7 @@
                            value="<?php echo $this->options['name']['placeholder']; ?>"/>
                 </td>
                 <td><input type="checkbox" name="custom_comments[name][required]" value="1" <?php checked
-					( $this->options['name']['required'], 1 ); ?>></td>
+                    ( $this->options['name']['required'], 1 ); ?>></td>
             </tr>
             <tr>
                 <td>
@@ -62,7 +62,7 @@
                            value="<?php echo $this->options['email']['placeholder']; ?>"/>
                 </td>
                 <td><input type="checkbox" name="custom_comments[email][required]" value="1" <?php checked
-					( $this->options['email']['required'], 1 ); ?>></td>
+                    ( $this->options['email']['required'], 1 ); ?>></td>
             </tr>
             <tr>
                 <td><label>Текст комментария</label></td>
@@ -75,45 +75,47 @@
                            value="<?php echo $this->options['text']['placeholder']; ?>"/>
                 </td>
                 <td><input type="checkbox" name="custom_comments[text][required]" value="1" <?php checked
-					( $this->options['text']['required'], 1 ); ?>></td>
+                    ( $this->options['text']['required'], 1 ); ?>></td>
             </tr>
             <tr>
                 <td></td>
             </tr>
-<!--            <tr>-->
-<!--                <td><strong>Additional fields</strong></td>-->
-<!--            </tr>-->
-<!--            <tbody class="repeater">-->
-<!--            <tr>-->
-<!--                <td></td>-->
-<!--                <td></td>-->
-<!--                <td><a href="#" class=" button-primary-->
-<!--                            repeater-add-btn"><span class="dashicons dashicons-plus"></span></a></td>-->
-<!--            </tr>-->
-<!--			--><?php
-//			foreach ( $this->options['additional_fields'] as $key => $item ):; ?>
-<!--                <tr>-->
-<!--                    <td><input type="text" name="custom_comments[additional_fields][--><?php //echo $key ?><!--][label]"-->
-<!--                               data-number="--><?php //echo $key; ?><!--" placeholder="Field label"-->
-<!--                               value="--><?php //echo $item['label']; ?><!--"></td>-->
-<!--                    <td><input type="text" name="custom_comments[additional_fields][--><?php //echo $key ?><!--][slug]"-->
-<!--                               data-number="--><?php //echo $key; ?><!--" placeholder="Field slug"-->
-<!--                               value="--><?php //echo $item['slug']; ?><!--"></td>-->
-<!--                    <td><a href="#" class="button remove-btn"><span class="dashicons dashicons-no"></span></a></td>-->
-<!--                </tr>-->
-<!--			--><?php //endforeach; ?>
-<!--			--><?php //if ( empty( $this->options['additional_fields'] ) ): ?>
-<!--                <tr>-->
-<!--                    <td><input type="text" name="custom_comments[additional_fields][0][label]" data-number="0"-->
-<!--                               placeholder="Field label"-->
-<!--                               value=""></td>-->
-<!--                    <td><input type="text" name="custom_comments[additional_fields][0][slug]" data-number="0"-->
-<!--                               placeholder="Field slug"-->
-<!--                               value=""></td>-->
-<!--                    <td><a href="#" class="button remove-btn"><span class="dashicons dashicons-no"></span></a></td>-->
-<!--                </tr>-->
-<!--			--><?php //endif; ?>
-<!--            </tbody>-->
+            <!--            <tr>-->
+            <!--                <td><strong>Additional fields</strong></td>-->
+            <!--            </tr>-->
+            <!--            <tbody class="repeater">-->
+            <!--            <tr>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td><a href="#" class=" button-primary-->
+            <!--                            repeater-add-btn"><span class="dashicons dashicons-plus"></span></a></td>-->
+            <!--            </tr>-->
+            <!--			--><?php
+            //			foreach ( $this->options['additional_fields'] as $key => $item ):; ?>
+            <!--                <tr>-->
+            <!--                    <td><input type="text" name="custom_comments[additional_fields][-->
+            <?php //echo $key ?><!--][label]"-->
+            <!--                               data-number="--><?php //echo $key; ?><!--" placeholder="Field label"-->
+            <!--                               value="--><?php //echo $item['label']; ?><!--"></td>-->
+            <!--                    <td><input type="text" name="custom_comments[additional_fields][-->
+            <?php //echo $key ?><!--][slug]"-->
+            <!--                               data-number="--><?php //echo $key; ?><!--" placeholder="Field slug"-->
+            <!--                               value="--><?php //echo $item['slug']; ?><!--"></td>-->
+            <!--                    <td><a href="#" class="button remove-btn"><span class="dashicons dashicons-no"></span></a></td>-->
+            <!--                </tr>-->
+            <!--			--><?php //endforeach; ?>
+            <!--			--><?php //if ( empty( $this->options['additional_fields'] ) ): ?>
+            <!--                <tr>-->
+            <!--                    <td><input type="text" name="custom_comments[additional_fields][0][label]" data-number="0"-->
+            <!--                               placeholder="Field label"-->
+            <!--                               value=""></td>-->
+            <!--                    <td><input type="text" name="custom_comments[additional_fields][0][slug]" data-number="0"-->
+            <!--                               placeholder="Field slug"-->
+            <!--                               value=""></td>-->
+            <!--                    <td><a href="#" class="button remove-btn"><span class="dashicons dashicons-no"></span></a></td>-->
+            <!--                </tr>-->
+            <!--			--><?php //endif; ?>
+            <!--            </tbody>-->
             <tr>
                 <td><label>Отправить</label></td>
                 <td><input type="text"

@@ -43,20 +43,20 @@ $comment      = $comment_list->get_comment( $_GET['type'], $_GET['custom_comment
                             </div>
                         </div>
                         <div id="postdiv" class="postarea">
-							<?php
-							echo '<label for="content" class="screen-reader-text">' . __( 'Comment' ) . '</label>';
-							$quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,close' );
-							wp_editor(
-								$comment->comment_content,
-								'content',
-								array(
-									'media_buttons' => false,
-									'tinymce'       => false,
-									'quicktags'     => $quicktags_settings,
-								)
-							);
-							wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
-							?>
+                            <?php
+                            echo '<label for="content" class="screen-reader-text">' . __( 'Comment' ) . '</label>';
+                            $quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,close' );
+                            wp_editor(
+                                $comment->comment_content,
+                                'content',
+                                array(
+                                    'media_buttons' => false,
+                                    'tinymce'       => false,
+                                    'quicktags'     => $quicktags_settings,
+                                )
+                            );
+                            wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false );
+                            ?>
                         </div>
                     </div><!-- /post-body-content -->
 
@@ -90,71 +90,71 @@ $comment      = $comment_list->get_comment( $_GET['type'], $_GET['custom_comment
                                             </fieldset>
 
                                             <div class="misc-pub-section curtime misc-pub-curtime">
-												<?php
-												$datef = __( 'M j, Y @ H:i' );
-												?>
+                                                <?php
+                                                $datef = __( 'M j, Y @ H:i' );
+                                                ?>
                                                 <span id="timestamp">
                                                 <?php
                                                 printf(
-	                                                __( 'Submitted on: %s' ),
-	                                                '<b>' . date_i18n( $datef, strtotime( $comment->comment_date ) ) . '</b>'
+                                                    __( 'Submitted on: %s' ),
+                                                    '<b>' . date_i18n( $datef, strtotime( $comment->comment_date ) ) . '</b>'
                                                 );
                                                 ?>
                                                 </span>
                                             </div>
 
-											<?php
-											$post_id = $comment->comment_post_ID;
-											if ( $_GET['type'] == 'post' ) {
-												if ( current_user_can( 'edit_post', $post_id ) ) {
-													$post_link = "<a href='" . esc_url( get_edit_post_link( $post_id ) ) . "'>";
-													$post_link .= esc_html( get_the_title( $post_id ) ) . '</a>';
-												} else {
-													$post_link = esc_html( get_the_title( $post_id ) );
-												}
+                                            <?php
+                                            $post_id = $comment->comment_post_ID;
+                                            if ( $_GET['type'] == 'post' ) {
+                                                if ( current_user_can( 'edit_post', $post_id ) ) {
+                                                    $post_link = "<a href='" . esc_url( get_edit_post_link( $post_id ) ) . "'>";
+                                                    $post_link .= esc_html( get_the_title( $post_id ) ) . '</a>';
+                                                } else {
+                                                    $post_link = esc_html( get_the_title( $post_id ) );
+                                                }
 
-											} else {
-												$term = get_term( $post_id );
-												if ( current_user_can( 'edit_post', $post_id ) ) {
-													$post_link = "<a href='" . esc_url( get_edit_term_link( $term->term_id, $term->taxonomy ) ) . "'>";
-													$post_link .= esc_html( $term->name ) . '</a>';
-												} else {
-													$post_link = esc_html( $term->name );
-												}
-											}
+                                            } else {
+                                                $term = get_term( $post_id );
+                                                if ( current_user_can( 'edit_post', $post_id ) ) {
+                                                    $post_link = "<a href='" . esc_url( get_edit_term_link( $term->term_id, $term->taxonomy ) ) . "'>";
+                                                    $post_link .= esc_html( $term->name ) . '</a>';
+                                                } else {
+                                                    $post_link = esc_html( $term->name );
+                                                }
+                                            }
 
-											?>
+                                            ?>
 
                                             <div class="misc-pub-section misc-pub-response-to">
-												<?php
-												printf(
-												/* translators: %s: post link */
-													__( 'In response to: %s' ),
-													'<b>' . $post_link . '</b>'
-												);
-												?>
+                                                <?php
+                                                printf(
+                                                /* translators: %s: post link */
+                                                    __( 'In response to: %s' ),
+                                                    '<b>' . $post_link . '</b>'
+                                                );
+                                                ?>
                                             </div>
 
-											<?php
-											if ( $comment->comment_parent ) :
-												$parent = get_comment( $comment->comment_parent );
-												if ( $parent ) :
-													$parent_link = esc_url( get_comment_link( $parent ) );
-													$name = get_comment_author( $parent );
-													?>
+                                            <?php
+                                            if ( $comment->comment_parent ) :
+                                                $parent = get_comment( $comment->comment_parent );
+                                                if ( $parent ) :
+                                                    $parent_link = esc_url( get_comment_link( $parent ) );
+                                                    $name = get_comment_author( $parent );
+                                                    ?>
                                                     <div class="misc-pub-section misc-pub-reply-to">
-														<?php
-														printf(
-														/* translators: %s: comment link */
-															__( 'In reply to: %s' ),
-															'<b><a href="' . $parent_link . '">' . $name . '</a></b>'
-														);
-														?>
+                                                        <?php
+                                                        printf(
+                                                        /* translators: %s: comment link */
+                                                            __( 'In reply to: %s' ),
+                                                            '<b><a href="' . $parent_link . '">' . $name . '</a></b>'
+                                                        );
+                                                        ?>
                                                     </div>
-												<?php
-												endif;
-											endif;
-											?>
+                                                <?php
+                                                endif;
+                                            endif;
+                                            ?>
 
                                         </div>
                                         <div class="clear"></div>
@@ -162,10 +162,10 @@ $comment      = $comment_list->get_comment( $_GET['type'], $_GET['custom_comment
 
                                     <div id="major-publishing-actions">
                                         <div id="delete-action">
-											<?php echo '<a class="submitdelete deletion" href="?page=custom_comments_list&action=move_to_trash&comment_id' . $comment->comment_ID . '&type=' . $_GET['type'] . '">' . ( ! EMPTY_TRASH_DAYS ? __( 'Delete Permanently' ) : __( 'Move to Trash' ) ) . "</a>\n"; ?>
+                                            <?php echo '<a class="submitdelete deletion" href="?page=custom_comments_list&action=move_to_trash&comment_id' . $comment->comment_ID . '&type=' . $_GET['type'] . '">' . ( ! EMPTY_TRASH_DAYS ? __( 'Delete Permanently' ) : __( 'Move to Trash' ) ) . "</a>\n"; ?>
                                         </div>
                                         <div id="publishing-action">
-											<?php submit_button( __( 'Update' ), 'primary large', 'save', false ); ?>
+                                            <?php submit_button( __( 'Update' ), 'primary large', 'save', false ); ?>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -175,24 +175,24 @@ $comment      = $comment_list->get_comment( $_GET['type'], $_GET['custom_comment
                     </div>
 
                     <div id="postbox-container-2" class="postbox-container">
-						<?php
-						/** This action is documented in wp-admin/includes/meta-boxes.php */
-						do_action( 'add_meta_boxes', 'comment', $comment );
+                        <?php
+                        /** This action is documented in wp-admin/includes/meta-boxes.php */
+                        do_action( 'add_meta_boxes', 'comment', $comment );
 
-						/**
-						 * Fires when comment-specific meta boxes are added.
-						 *
-						 * @param WP_Comment $comment Comment object.
-						 *
-						 * @since 3.0.0
-						 *
-						 */
-						do_action( 'add_meta_boxes_comment', $comment );
+                        /**
+                         * Fires when comment-specific meta boxes are added.
+                         *
+                         * @param WP_Comment $comment Comment object.
+                         *
+                         * @since 3.0.0
+                         *
+                         */
+                        do_action( 'add_meta_boxes_comment', $comment );
 
-						do_meta_boxes( null, 'normal', $comment );
+                        do_meta_boxes( null, 'normal', $comment );
 
-						$referer = wp_get_referer();
-						?>
+                        $referer = wp_get_referer();
+                        ?>
                     </div>
 
                     <input type="hidden" name="c" value="<?php echo esc_attr( $comment->comment_ID ); ?>"/>
@@ -202,7 +202,7 @@ $comment      = $comment_list->get_comment( $_GET['type'], $_GET['custom_comment
                     <input type="hidden" name="action" value="update_comment">
                     <input name="referredby" type="hidden" id="referredby"
                            value="<?php echo $referer ? esc_url( $referer ) : ''; ?>"/>
-					<?php wp_original_referer_field( true, 'previous' ); ?>
+                    <?php wp_original_referer_field( true, 'previous' ); ?>
                     <input type="hidden" name="noredir" value="1"/>
 
                 </div><!-- /post-body -->
